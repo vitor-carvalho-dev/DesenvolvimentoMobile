@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Cores base do sistema -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Paleta Principal - Vermelhos -->
+    <color name="red_50">#FFEBEE</color>        <!-- Muito claro para backgrounds -->
+    <color name="red_100">#FFCDD2</color>       <!-- Claro para cards/containers -->
+    <color name="red_200">#EF9A9A</color>       <!-- Claro médio -->
+    <color name="red_300">#E57373</color>       <!-- Médio -->
+    <color name="red_400">#EF5350</color>       <!-- Médio escuro -->
+    <color name="red_500">#F44336</color>       <!-- Principal/Primary -->
+    <color name="red_600">#E53935</color>       <!-- Primary Dark -->
+    <color name="red_700">#D32F2F</color>       <!-- Escuro -->
+    <color name="red_800">#C62828</color>       <!-- Muito escuro -->
+    <color name="red_900">#B71C1C</color>       <!-- Mais escuro -->
+
+    <!-- Cores Accent - Rosa/Vermelho complementar -->
+    <color name="pink_accent_100">#FF8A80</color>
+    <color name="pink_accent_200">#FF5722</color>
+    <color name="pink_accent_400">#FF1744</color>
+    <color name="pink_accent_700">#D50000</color>
+
+    <!-- Cores do Material Design Theme -->
+    <color name="colorPrimary">@color/red_500</color>           <!-- #F44336 -->
+    <color name="colorPrimaryDark">@color/red_700</color>       <!-- #D32F2F -->
+    <color name="colorAccent">@color/pink_accent_200</color>    <!-- #FF5722 -->
+
+    <!-- Status Bar (recomendado para melhor UX) -->
+    <color name="statusBarColor">@color/red_700</color>         <!-- #D32F2F -->
+
+    <!-- Backgrounds -->
+    <color name="backgroundColor">#FAFAFA</color>               <!-- Cinza muito claro -->
+    <color name="cardBackground">@color/white</color>           <!-- Branco para cards -->
+    <color name="surfaceColor">@color/white</color>            <!-- Superfícies -->
+
+    <!-- Textos -->
+    <color name="textColorPrimary">#212121</color>              <!-- Texto principal -->
+    <color name="textColorSecondary">#757575</color>            <!-- Texto secundário -->
+    <color name="textColorHint">#BDBDBD</color>                 <!-- Hints/placeholders -->
+    <color name="textOnPrimary">@color/white</color>            <!-- Texto sobre cor primária -->
+
+    <!-- Estados e Feedback -->
+    <color name="errorColor">@color/red_600</color>             <!-- Erros -->
+    <color name="successColor">#4CAF50</color>                  <!-- Sucesso -->
+    <color name="warningColor">#FF9800</color>                  <!-- Avisos -->
+    <color name="infoColor">#2196F3</color>                     <!-- Informações -->
+
+    <!-- Divisores e Bordas -->
+    <color name="dividerColor">#E0E0E0</color>                  <!-- Divisores -->
+    <color name="borderColor">#E0E0E0</color>                   <!-- Bordas -->
+
+    <!-- Estados de Interação -->
+    <color name="rippleColor">#1AF44336</color>                 <!-- Ripple effect (26% opacity) -->
+    <color name="selectedColor">#1AF44336</color>               <!-- Items selecionados -->
+    <color name="pressedColor">#0D000000</color>                <!-- Estado pressionado -->
+
+    <!-- Sombras -->
+    <color name="shadowColor">#1F000000</color>                 <!-- Sombras (31% opacity) -->
+</resources>
