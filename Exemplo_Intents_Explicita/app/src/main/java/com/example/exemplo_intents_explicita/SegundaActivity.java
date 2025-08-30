@@ -7,6 +7,8 @@ import android.widget.TextView;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.exemplo_intents_explicita.model.Usuario;
+
 
 public class SegundaActivity extends AppCompatActivity {
 
@@ -21,7 +23,9 @@ public class SegundaActivity extends AppCompatActivity {
 
         Bundle dados = getIntent().getExtras();
 
-        tvLogin.setText(dados.getString("login"));
-        tvSenha.setText(dados.getString("senha"));
+        Usuario usuario = (Usuario) dados.getSerializable("objetousuario");
+        tvLogin.setText(usuario.getLoginUsuario());
+        tvSenha.setText(usuario.getSenha());
+
     }
 }

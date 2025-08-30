@@ -13,6 +13,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.exemplo_intents_explicita.model.Usuario;
+
 public class MainActivity extends AppCompatActivity {
 
     EditText edtLogin, edtSenha;
@@ -30,19 +32,29 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String loginDigitado = edtLogin.getText().toString();
-                String senhaDigitada = edtSenha.getText().toString();
+                Intent intencao = new Intent(MainActivity.this, SegundaActivity.class);
+                Usuario usuario = new Usuario();
+                String login, senha;
 
-                String login = "admin";
-                String senha = "1234";
+                usuario.setLoginUsuario(edtLogin.getText().toString());
+                usuario.setSenha(edtSenha.getText().toString());
 
-                if (loginDigitado.equals(login) && senhaDigitada.equals(senha)) {
-                    Intent intencao = new Intent(MainActivity.this, SegundaActivity.class);
-                    intencao.putExtra("login", loginDigitado);
-                    intencao.putExtra("senha", senhaDigitada);
-                    startActivity(intencao);
-                    finish();
-                }
+                intencao.putExtra("objetousuario", usuario);
+                startActivity(intencao);
+
+               // String loginDigitado = edtLogin.getText().toString();
+               // String senhaDigitada = edtSenha.getText().toString();
+
+               // String login = loginDigitado;
+               // String senha = senhaDigitada;
+
+              //  if (loginDigitado.equals(login) && senhaDigitada.equals(senha)) {
+               //     Intent intencao = new Intent(MainActivity.this, SegundaActivity.class);
+               //     intencao.putExtra("login", loginDigitado);
+               //     intencao.putExtra("senha", senhaDigitada);
+               //     startActivity(intencao);
+               //     finish();
+              //  }
             }
         });
     }
