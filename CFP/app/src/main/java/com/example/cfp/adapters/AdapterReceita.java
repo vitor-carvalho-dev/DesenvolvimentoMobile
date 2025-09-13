@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.cfp.R;
 
 
+import com.example.cfp.model.Despesa;
 import com.example.cfp.model.Receita;
 
 import java.text.SimpleDateFormat;
@@ -23,6 +24,11 @@ public class AdapterReceita extends RecyclerView.Adapter<AdapterReceita.MyViewHo
     private List<Receita> listaReceita;
     private Context context;
     private SimpleDateFormat dateFormat;
+
+    public AdapterReceita(List<Receita> listaReceita){
+        this.listaReceita = listaReceita;
+        this.dateFormat = new SimpleDateFormat("yyyy/MM/YYYY", Locale.getDefault());
+    }
 
     @NonNull
     @Override
