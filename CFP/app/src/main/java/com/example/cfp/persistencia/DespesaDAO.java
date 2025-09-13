@@ -8,9 +8,11 @@ import android.util.Log;
 
 import com.example.cfp.model.Despesa;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
@@ -89,22 +91,97 @@ public class DespesaDAO implements ICrudDAO<Despesa>{
     }
 
     @Override
+//    public List<Despesa> listarTodos() {
+//        List<Despesa> lstDespesas = new ArrayList<>();
+//
+//        String sql = "SELECT * FROM " + DbHelper.TB_DESPESAS + " ; " ;
+//
+//        try(Cursor cursor = dbLe.rawQuery(sql, null)){
+//            while(cursor.moveToNext()) {
+//
+//
+//                int id = cursor.getInt(cursor.getColumnIndexOrThrow("idDespesa"));
+//                String descricao = cursor.getString(cursor.getColumnIndexOrThrow("descricaoDespesa"));
+//                double valor = cursor.getDouble(cursor.getColumnIndexOrThrow("valorDespesa"));
+//
+//                String dataStr = cursor.getString(cursor.getColumnIndexOrThrow("dataDespesa"));
+//
+//                // Convertendo a string para Date
+//                Date data = null;
+//                try {
+//                    data = dateFormat.parse(dataStr);
+//                } catch (ParseException e) {
+//                    Log.e("DespesaDAO", "Erro ao converter data: " + dataStr + " - " + e.getMessage());
+//                }
+//                // Criando o objeto e adicionando à lista
+//                Despesa despesa = new Despesa(id, descricao, valor, data);
+//                lstDespesas.add(despesa);
+//
+//                Log.i("Info DB", "Despesa listada: " + descricao);
+//            }
+//
+//            }
+//
+//        } catch (Exception e) {
+//        Log.e("DespesaDAO", "Erro ao listar todas as despesas: " + e.getMessage());
+//    }
+//
+//    return lstDespesas;
+//    }
+
     public List<Despesa> listarTodos() {
-        List<Despesa> lista = new ArrayList<>();
+        List<Despesa> lstDespesas = new ArrayList<>();
 
-        String sql = "SELECT * FROM " + DbHelper.TB_DESPESAS + " ; " ;
+        String sql = "SELECT * FROM " + DbHelper.TB_DESPESAS + ";";
 
-        try(Cursor cursor = dbLe.rawQuery(sql, null)){
-            while(cursor.moveToNext()) {
-                
+        try (Cursor cursor = dbLe.rawQuery(sql, null)) {
+            while (cursor.moveToNext()) {
+
+                int id = cursor.getInt(cursor.getColumnIndexOrThrow("idDespesa"));
+                String descricao = cursor.getString(cursor.getColumnIndexOrThrow("descricaoDespesa"));
+                double valor = cursor.getDouble(cursor.getColumnIndexOrThrow("valorDespesa"));
+                String dataStr = cursor.getString(cursor.getColumnIndexOrThrow("dataDespesa"));
+                Date data = dateFormat.parse(dataStr);
+
+                Despesa despesa = new Despesa(id, descricao, valor, data);
+                lstDespesas.add(despesa);
+
+                Log.i("Info DB", "Despesa listada: " + descricao);
             }
 
-        } catch (Exception e) {}
+        } catch (Exception e) {
+            Log.e("DespesaDAO", "Erro ao listar todas as despesas: " + e.getMessage());
+        }
 
+        return lstDespesas;
     }
+
 
     @Override
-    public Despesa ListarPorId(int id) {
+    public Despesa ListarPorId(int idDespesa) {
+
+        String sql = "SELECT * FROM " + DbHelper.TB_DESPESAS + " WHERE idDespesa = ?";
+
+        try (Cursor cursor = dbLe.rawQuery(sql, null)) {
+
+            while (cursor.moveToNext()) {
+
+                int id = cursor.getInt(cursor.getColumnIndexOrThrow("idDespesa"));
+                String descricao = cursor.getString(cursor.getColumnIndexOrThrow("descricaoDespesa"));
+                double valor = cursor.getDouble(cursor.getColumnIndexOrThrow("valorDespesa"));
+                String dataStr = cursor.getString(cursor.getColumnIndexOrThrow("dataDespesa"));
+                Date data = dateFormat.parse(dataStr);
+                Log.i("Info DB", "Despesa listada: " + descricao);
+
+                return new Despesa(id, descricao, valor, data);
+            }
+
+        } catch (Exception e) {
+            Log.e("DespesaDAO", "Erro ao listar todas as despesas: " + e.getMessage());
+        }
+
         return null;
+
     }
+
 }
