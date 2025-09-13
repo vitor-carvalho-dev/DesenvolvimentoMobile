@@ -10,8 +10,8 @@ public class DbHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "financeiro.db";
     private static final int DATABASE_VERSION = 1;
 
-    private static final String TB_DESPESAS = "despesas.db";
-    private static final String TB_RECEITAS = "receitas.db";
+    public static final String TB_DESPESAS = "despesas.db";
+    public static final String TB_RECEITAS = "receitas.db";
 
     private static final String SQL_CREATE_DESPESAS = "CREATE TABLE IF NOT EXISTS "
             + TB_DESPESAS + " ("

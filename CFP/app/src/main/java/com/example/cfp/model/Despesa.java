@@ -6,6 +6,8 @@ import java.util.Date;
 public class Despesa implements Serializable {
     private int id;
     private String despesa;
+
+    private String descricao;
     private double valor;
     private Date data;
 
@@ -16,6 +18,14 @@ public class Despesa implements Serializable {
         this.despesa = despesa;
         this.valor = valor;
         this.data = data;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
     public int getId() {
