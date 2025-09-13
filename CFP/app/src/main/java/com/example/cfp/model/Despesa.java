@@ -6,7 +6,6 @@ import java.util.Date;
 public class Despesa implements Serializable {
     private int id;
     private String despesa;
-
     private String descricao;
     private double valor;
     private Date data;

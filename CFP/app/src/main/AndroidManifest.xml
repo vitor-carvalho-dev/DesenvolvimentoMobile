@@ -13,6 +13,12 @@
         android:theme="@style/Theme.CFP"
         tools:targetApi="31">
         <activity
+            android:name=".ReceitaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DespesaActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

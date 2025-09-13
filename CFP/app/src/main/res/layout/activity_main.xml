@@ -58,21 +58,21 @@
         android:id="@+id/rvListaDespesas"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:visibility="visible"
-        app:layout_constraintTop_toBottomOf="@id/tab_layout"
-        app:layout_constraintStart_toStartOf="parent"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tab_layout" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvListaReceitas"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:visibility="gone"
-        app:layout_constraintTop_toBottomOf="@id/tab_layout"
-        app:layout_constraintStart_toStartOf="parent"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tab_layout" />
 
 
     <!-- Botão para adicionar despesas -->
@@ -80,21 +80,27 @@
         android:id="@+id/cmdNovaDespesa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Adicionar Despesa"
         android:layout_margin="16dp"
+        android:backgroundTint="#F44336"
+        android:text="Adicionar Despesa"
+        android:textSize="20sp"
+        android:textStyle="bold"
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- Botão para adicionar receitas -->
     <Button
         android:id="@+id/cmdNovaReceita"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Adicionar Receita"
         android:layout_margin="16dp"
+        android:backgroundTint="#2196F3"
+        android:text="Adicionar Receita"
+        android:textSize="20sp"
+        android:textStyle="bold"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
