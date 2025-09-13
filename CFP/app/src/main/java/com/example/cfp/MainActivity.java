@@ -1,5 +1,6 @@
 package com.example.cfp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -35,7 +36,21 @@ public class MainActivity extends AppCompatActivity {
         recycleReceita = (RecyclerView) findViewById(R.id.rvListaReceitas);
         recycleDespesa = (RecyclerView) findViewById(R.id.rvListaDespesas);
         btnNovaDespesa = (Button) findViewById(R.id.cmdNovaDespesa);
+        btnNovaDespesa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intencao = new Intent(MainActivity.this, DespesaActivity.class);
+                startActivity(intencao);
+            }
+        });
         btnNovaReceita = (Button) findViewById(R.id.cmdNovaReceita);
+        btnNovaReceita.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intencao = new Intent(MainActivity.this, ReceitaActivity.class);
+                startActivity(intencao);
+            }
+        });
         tabLayout = (TabLayout) findViewById(R.id.tab_layout);
 
         // clique dos botoes
